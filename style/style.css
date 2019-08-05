@@ -1,0 +1,120 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Стили для контейнера */
+
+.socials {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+/* Стили для кнопок */
+
+.btn {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: #f1f1f1;
+    margin: 10px;
+    border-radius: 30%;
+    box-shadow: 0 5px 15px -5px #00000070;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Стили для иконок */
+
+.btn i {
+    line-height: 90px;
+    font-size: 26px;
+    transition: .2s linear;
+}
+
+.fa-facebook-f {
+    color: #3b5998;
+}
+
+.fa-twitter {
+    color: #00acee;
+}
+
+.fa-youtube {
+    color: #c4302b;
+}
+
+.fa-instagram {
+    color: #dc2743;
+}
+
+.fa-vk {
+    color: #4c75a3;
+}
+
+.btn:hover i {
+    transform: scale(1.3);
+    color: #f1f1f1 ;
+}
+
+/* Создаем подложку и анимацию */
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 90%;
+    left: -110%;
+    width: 120%;
+    height: 120%;
+    transform: rotate(45deg);
+}
+
+.btn-facebook::before {
+    background: #3b5998;
+}
+
+.btn-twitter::before {
+    background: #00acee;
+}
+
+.btn-youtube::before {
+    background: #c4302b;
+}
+
+.btn-instagram::before {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.btn-vk::before {
+    background: #4c75a3;
+}
+
+.btn:hover::before {
+    animation: socialsIconHover .7s 1;
+    top: -10%;
+    left: -10%;
+}
+
+@keyframes socialsIconHover {
+    0% {
+        top: 90%;
+        left: -110%;
+    }
+
+    50% {
+        top: -30%;
+        left: 10%;
+    }
+
+    100% {
+        top: -10%;
+        left: -10%;
+    }
+}
